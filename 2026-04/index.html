@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Samriddhi — 2026-04 Dashboard</title>
+<style>
+  body { font-family: system-ui, sans-serif; margin: 0; background: #f8fafc; color: #1e293b; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 24px 16px; }
+  h1 { font-size: 1.6rem; font-weight: 700; margin-bottom: 4px; }
+  .subtitle { color: #64748b; font-size: .85rem; margin-bottom: 28px; }
+  .section { background: #fff; border-radius: 10px; box-shadow: 0 1px 4px #0001; padding: 20px 24px; margin-bottom: 20px; }
+  .section h2 { font-size: 1rem; font-weight: 600; margin: 0 0 16px; color: #334155; text-transform: uppercase; letter-spacing: .05em; }
+  .kpi-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
+  .kpi { background: #f1f5f9; border-radius: 8px; padding: 14px 16px; }
+  .kpi .label { font-size: .75rem; color: #64748b; margin-bottom: 4px; }
+  .kpi .value { font-size: 1.25rem; font-weight: 700; color: #0f172a; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  table { width: 100%; border-collapse: collapse; font-size: .85rem; }
+  th { text-align: left; font-weight: 600; color: #475569; border-bottom: 2px solid #e2e8f0; padding: 6px 8px; }
+  td { padding: 5px 8px; border-bottom: 1px solid #f1f5f9; }
+  tr:last-child td { border-bottom: none; }
+  .total-row td { font-weight: 700; border-top: 2px solid #e2e8f0; }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: .72rem; font-weight: 600; }
+  .badge-critical { background: #fee2e2; color: #b91c1c; }
+  .badge-warning  { background: #fef3c7; color: #92400e; }
+  .badge-info     { background: #dbeafe; color: #1e40af; }
+  @media (max-width: 640px) { .two-col { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <h1>Samriddhi — 2026-04 Dashboard</h1>
+  <div class="subtitle">Generated 2026-06-19 15:26 UTC</div>
+
+  <!-- Headline KPIs -->
+  <div class="section">
+    <h2>Headline KPIs</h2>
+    <div class="kpi-grid">
+      <div class="kpi"><div class="label">Total Sale</div><div class="value">₹559,672.86</div></div>
+      <div class="kpi"><div class="label">Cash Sale</div><div class="value">₹306,310.00</div></div>
+      <div class="kpi"><div class="label">HDFC Sale</div><div class="value">₹144,573.00</div></div>
+      <div class="kpi"><div class="label">Credit Sale</div><div class="value">₹103,350.00</div></div>
+      <div class="kpi"><div class="label">Coupons Issued</div><div class="value">₹571,620.00</div></div>
+      <div class="kpi"><div class="label">Commission Earned</div><div class="value">₹61,443.55</div></div>
+      <div class="kpi"><div class="label">Organic Produce Payable</div><div class="value">₹431,430.14</div></div>
+      <div class="kpi"><div class="label">Net Surplus</div><div class="value">₹23,160.72</div></div>
+    </div>
+  </div>
+
+  <!-- Bifurcated Revenue Headline -->
+  <div class="section">
+    <h2>Revenue & Distribution</h2>
+    <div class="kpi-grid">
+      <div class="kpi" style="background:#dbeafe">
+        <div class="label">Total Revenue</div>
+        <div class="value" style="color:#1d4ed8">₹1,180,094.12</div>
+        <div style="font-size:.65rem;color:#64748b;margin-top:6px;line-height:1.4">
+          Cash ₹306,310 ·
+          HDFC ₹144,573 ·
+          Receipts ₹729,211
+        </div>
+      </div>
+      <div class="kpi" style="background:#fef3c7">
+        <div class="label">Total Producer Share</div>
+        <div class="value" style="color:#b45309">₹427,333.90</div>
+        <div style="font-size:.65rem;color:#64748b;margin-top:6px;line-height:1.4">
+          Credit ₹431,430 −
+          GST ₹4,096
+        </div>
+      </div>
+      <div class="kpi" style="background:#dcfce7">
+        <div class="label">Samriddhi Shop Income</div>
+        <div class="value" style="color:#15803d">₹173,438.39</div>
+        <div style="font-size:.65rem;color:#64748b;margin-top:6px;line-height:1.4">
+          Commission ₹61,444 ·
+          Milk Dist ₹92,978 ·
+          Svikruti Transport ₹11,918
+        </div>
+      </div>
+      <div class="kpi" style="background:#ede9fe">
+        <div class="label">Total Milk Share</div>
+        <div class="value" style="color:#6d28d9">₹557,865.00</div>
+        <div style="font-size:.65rem;color:#64748b;margin-top:6px;line-height:1.4">
+          6,198.5 L × ₹90 (theoretical)
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Shop P&L -->
+  <div class="section">
+    <h2>Shop P&L (Operational)</h2>
+    <div class="kpi-grid">
+      <div class="kpi" style="background:#dcfce7"><div class="label">Shop Income</div><div class="value" style="color:#15803d">₹173,438.39</div></div>
+      <div class="kpi" style="background:#fee2e2"><div class="label">Shop Expenses</div><div class="value" style="color:#b91c1c">₹150,277.67</div></div>
+      <div class="kpi" style="background:#dbeafe"><div class="label">Net</div><div class="value" style="color:#1d4ed8">₹23,160.72</div></div>
+    </div>
+  </div>
+
+  <!-- Income & Expenses -->
+  <div class="two-col">
+    <div class="section">
+      <h2>Shop Income (margin)</h2>
+      <table>
+        <tr><th>Component</th><th>Amount</th></tr>
+        <tr><td>Commission</td><td>₹61,443.55</td></tr>
+        <tr><td>Milk Distribution</td><td>₹92,977.50</td></tr>
+        <tr><td>Milk Transport</td><td>₹11,917.50</td></tr>
+        <tr class="total-row"><td>TOTAL INCOME</td><td>₹173,438.39</td></tr>
+      </table>
+      <p style="font-size:.7rem;color:#94a3b8;margin:10px 0 0">Sales Cash ₹306,310 · HDFC ₹144,573 · Credit ₹103,350 (revenue, not income)</p>
+    </div>
+    <div class="section">
+      <h2>Shop Expenses</h2>
+      <table>
+        <tr><th>Category</th><th>Amount</th></tr>
+        
+        <tr><td>Other / Stationery</td><td>₹26,738.00</td></tr>
+        
+        <tr><td>Bottling &amp; Packaging</td><td>₹900.00</td></tr>
+        
+        <tr><td>Bank &amp; Software</td><td>₹486.67</td></tr>
+        
+        <tr><td>Salaries</td><td>₹68,853.00</td></tr>
+        
+        <tr><td>Rent &amp; Utilities</td><td>₹39,160.00</td></tr>
+        
+        <tr><td>Incentives</td><td>₹500.00</td></tr>
+        
+        <tr><td>Repairs &amp; Maintenance</td><td>₹12,400.00</td></tr>
+        
+        <tr><td>Transport &amp; Distribution</td><td>₹1,240.00</td></tr>
+        
+        <tr class="total-row"><td>TOTAL EXPENSES</td><td>₹150,277.67</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- Milk Settlement — Per Partner -->
+  <div class="section">
+    
+    <h2>Milk Settlement — Hingana Single-Supplier</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Milk Partner</th>
+          <th style="text-align:right">Litres</th>
+          <th style="text-align:right">Rate ₹/L</th>
+          <th style="text-align:right">Net Share (info)</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+          <td>Dhamdha</td>
+          <td style="text-align:right">1150.00 L</td>
+          <td style="text-align:right">₹60</td>
+          <td style="text-align:right;color:#4f46e5;font-weight:600">₹69,000.00</td>
+        </tr>
+        
+        <tr>
+          <td>Vikas</td>
+          <td style="text-align:right">493.25 L</td>
+          <td style="text-align:right">₹60</td>
+          <td style="text-align:right;color:#4f46e5;font-weight:600">₹29,595.00</td>
+        </tr>
+        
+        <tr>
+          <td>Chauhan</td>
+          <td style="text-align:right">0.00 L</td>
+          <td style="text-align:right">₹60</td>
+          <td style="text-align:right;color:#4f46e5;font-weight:600">₹0.00</td>
+        </tr>
+        
+        <tr>
+          <td>Sansthan</td>
+          <td style="text-align:right">2695.50 L</td>
+          <td style="text-align:right">₹75</td>
+          <td style="text-align:right;color:#4f46e5;font-weight:600">₹202,162.50</td>
+        </tr>
+        
+        <tr>
+          <td>Sonalika Ji</td>
+          <td style="text-align:right">181.25 L</td>
+          <td style="text-align:right">₹75</td>
+          <td style="text-align:right;color:#4f46e5;font-weight:600">₹13,593.75</td>
+        </tr>
+        
+        <tr>
+          <td>Shesh</td>
+          <td style="text-align:right">96.25 L</td>
+          <td style="text-align:right">₹60</td>
+          <td style="text-align:right;color:#4f46e5;font-weight:600">₹5,775.00</td>
+        </tr>
+        
+        <tr>
+          <td>Hingana <span style="color:#94a3b8;font-size:.7rem">(own farm — residual)</span></td>
+          <td style="text-align:right">2868.50 L</td>
+          <td style="text-align:right"><span style="color:#94a3b8">—</span></td>
+          <td style="text-align:right;color:#4f46e5;font-weight:600">₹237,738.75</td>
+        </tr>
+        
+      </tbody>
+      <tfoot>
+        <tr class="total-row">
+          <td>POOL TOTAL (distributed × ₹90)</td>
+          <td style="text-align:right">7484.75 L</td>
+          <td></td>
+          <td style="text-align:right">₹557,865.00</td>
+        </tr>
+      </tfoot>
+    </table>
+    <p style="font-size:.7rem;color:#94a3b8;margin:10px 0 0;line-height:1.5">
+      Per-partner litre shares are informational. All milk is bought from Hingana as a single supplier;
+      the Harsh/Sanket/Dhamdha split inside payments is Hingana's own bookkeeping.
+    </p>
+
+    <h3 style="margin-top:18px">Hingana Milk Account — HINGANA MILK NEW</h3>
+    <table>
+      <tbody>
+        <tr><td>Milk Purchased (Cr)</td><td style="text-align:right">₹557,865.00</td></tr>
+        <tr><td>Paid to Hingana (Dr)</td><td style="text-align:right;color:#15803d">₹542,564.82</td></tr>
+        <tr class="total-row"><td>Closing Balance (Cr)</td><td style="text-align:right;color:#b91c1c">₹15,300.18</td></tr>
+      </tbody>
+    </table>
+
+    
+    <h3 style="margin-top:18px">Utpadan Room Ghee — passthrough to Hingana</h3>
+    <table>
+      <tbody>
+        <tr><td>Gross Purchase (Cr)</td><td style="text-align:right">₹83,250.00</td></tr>
+        <tr><td>Samriddhi Commission</td><td style="text-align:right">₹0.00</td></tr>
+        <tr><td>Payable to Hingana</td><td style="text-align:right">₹83,250.00</td></tr>
+        <tr class="total-row"><td>Closing (Cr)</td><td style="text-align:right">₹83,250.00</td></tr>
+      </tbody>
+    </table>
+    
+
+    
+    <h3 style="margin-top:18px">Utpadan Room Paneer &amp; Dahi — 15/84/1 split</h3>
+    <table>
+      <tbody>
+        <tr><td>Gross Purchase Credit</td><td style="text-align:right">₹47,332.24</td></tr>
+        <tr><td>Samriddhi Income (15%)</td><td style="text-align:right;color:#4f46e5;font-weight:600">₹7,099.84</td></tr>
+        <tr><td>Payable to Hingana (84%)</td><td style="text-align:right">₹39,759.08</td></tr>
+        <tr><td>GST — 1% model</td><td style="text-align:right">₹473.32</td></tr>
+        <tr><td>GST — ledger actual</td><td style="text-align:right;color:#b45309">₹556.25</td></tr>
+        <tr class="total-row"><td>Closing (Cr)</td><td style="text-align:right">₹46,724.99</td></tr>
+      </tbody>
+    </table>
+    
+    
+  </div>
+
+  <!-- Date-wise Milk Payments from Samriddhi -->
+  <div class="section">
+    <h2>Milk Payments from Samriddhi — Date-wise</h2>
+    
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th style="text-align:right">Amount</th>
+          <th>Route (info)</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+          <td>Apr  6</td>
+          <td style="text-align:right">₹50,000.00</td>
+          <td>harsh</td>
+          <td style="color:#94a3b8;font-size:.75rem">HARSH BHAI Ag. *011225,*021225,*031225</td>
+        </tr>
+        
+        <tr>
+          <td>Apr  7</td>
+          <td style="text-align:right">₹100,000.00</td>
+          <td>sanket</td>
+          <td style="color:#94a3b8;font-size:.75rem">SANKET BHAI Ag. *20-03-26,320,01</td>
+        </tr>
+        
+        <tr>
+          <td>Apr 13</td>
+          <td style="text-align:right">₹50,000.00</td>
+          <td>harsh</td>
+          <td style="color:#94a3b8;font-size:.75rem">HARSH BHAI Ag. *</td>
+        </tr>
+        
+        <tr>
+          <td>Apr 15</td>
+          <td style="text-align:right">₹100,000.00</td>
+          <td>sanket</td>
+          <td style="color:#94a3b8;font-size:.75rem">SANKET BHAI Ag. *031225,*041225,*051225,*06122 25,*071225</td>
+        </tr>
+        
+        <tr>
+          <td>Apr 21</td>
+          <td style="text-align:right">₹70,000.00</td>
+          <td>harsh</td>
+          <td style="color:#94a3b8;font-size:.75rem">HARSH BHAI Ag. *071225,*081225,*09.12,*091225, ,*101225</td>
+        </tr>
+        
+        <tr>
+          <td>Apr 22</td>
+          <td style="text-align:right">₹60,000.00</td>
+          <td>sanket</td>
+          <td style="color:#94a3b8;font-size:.75rem">SANKET BHAI Ag. 001,</td>
+        </tr>
+        
+        <tr>
+          <td>Apr 25</td>
+          <td style="text-align:right">₹50,000.00</td>
+          <td>sanket</td>
+          <td style="color:#94a3b8;font-size:.75rem">SANKET BHAI Ag. 001</td>
+        </tr>
+        
+        <tr>
+          <td>Apr 26</td>
+          <td style="text-align:right">₹20,000.00</td>
+          <td>harsh</td>
+          <td style="color:#94a3b8;font-size:.75rem">HARSH BHAI Ag. *101225,*111225</td>
+        </tr>
+        
+        <tr>
+          <td></td>
+          <td style="text-align:right">₹42,564.82</td>
+          <td>harsh</td>
+          <td style="color:#94a3b8;font-size:.75rem">HARSH BHAI ADJUST SHOP SE CASH + HDFC Ag. *051 1225,*111225,</td>
+        </tr>
+        
+      </tbody>
+      <tfoot>
+        <tr class="total-row">
+          <td>TOTAL PAID</td>
+          <td style="text-align:right;font-weight:700;color:#1d4ed8">₹542,564.82</td>
+          <td colspan="2" style="font-size:.75rem;color:#94a3b8">Harsh ₹232,565 · Sanket ₹310,000 · Dhamdha ₹0 · Other ₹0</td>
+        </tr>
+      </tfoot>
+    </table>
+    
+  </div>
+
+  <!-- Receipts vs Credit + Coupons -->
+  <div class="section">
+    <h2>Receipts vs Sales Credit + Coupons</h2>
+    <div class="kpi-grid">
+      <div class="kpi" style="background:#dcfce7"><div class="label">Total Receipts (194)</div><div class="value" style="color:#15803d">₹729,211.12</div></div>
+      <div class="kpi"><div class="label">Sales Credit</div><div class="value">₹103,350.00</div></div>
+      <div class="kpi"><div class="label">Coupons Issued</div><div class="value">₹571,620.00</div></div>
+      <div class="kpi"><div class="label">Credit + Coupons</div><div class="value">₹674,970.00</div></div>
+      <div class="kpi" style="background:#dcfce7">
+        <div class="label">Unrecovered</div>
+        <div class="value" style="color:#15803d">₹-54,241.12</div>
+      </div>
+    </div>
+    <p style="font-size:.75rem;color:#64748b;margin:10px 0 0">
+      Most receipts recover Sales Credit (debtors/loans/creditors from sale summary) and Coupon balances.
+    </p>
+  </div>
+
+  
+
+  <!-- Milk Collection — Monthly Aggregate per Unit -->
+  <div class="section">
+    <h2>Milk Collection — Monthly Aggregate (30 days)</h2>
+
+    <h3 style="font-size:.95rem;margin:8px 0 0;color:#0f172a;">🏪 Samriddhi Shop</h3>
+    <div class="two-col">
+      <div>
+      <div style="font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#94a3b8;margin:14px 0 4px;">Inflow</div>
+      <table>
+        
+        <tr><td>Hingana Packed</td><td style="text-align:right;color:#4f46e5;">4968.5 L</td></tr>
+        
+        <tr><td>Sansthan Open</td><td style="text-align:right;color:#4f46e5;">1459.8 L</td></tr>
+        
+        <tr><td>Sonalika Ji</td><td style="text-align:right;color:#4f46e5;">4.5 L</td></tr>
+        
+        <tr><td>Chauhan Ji</td><td style="text-align:right;color:#4f46e5;">0.0 L</td></tr>
+        
+        <tr><td>Harsh Ji</td><td style="text-align:right;color:#4f46e5;">147.0 L</td></tr>
+        
+        <tr><td>Any Other</td><td style="text-align:right;color:#4f46e5;">0.0 L</td></tr>
+        
+        
+        <tr class="total-row"><td>Total Received</td><td style="text-align:right;color:#047857;">6579.8 L</td></tr>
+        
+      </table>
+    </div>
+      <div>
+      <div style="font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#94a3b8;margin:14px 0 4px;">Outflow</div>
+      <table>
+        
+        <tr><td>Return to Utpadan</td><td style="text-align:right;color:#4f46e5;">295.8 L</td></tr>
+        
+        <tr><td>Wastage</td><td style="text-align:right;color:#4f46e5;">85.5 L</td></tr>
+        
+        
+        <tr class="total-row"><td>Total Distributed</td><td style="text-align:right;color:#b91c1c;">6198.5 L</td></tr>
+        
+      </table>
+    </div>
+    </div>
+    <p style="font-size:.7rem;color:#94a3b8;margin:6px 0 0">
+      <strong>Svikruti Transport (separate activity):</strong> 1702.50 L — not part of shop in/out
+    </p>
+
+    <h3 style="font-size:.95rem;margin:18px 0 0;color:#0f172a;">🌾 Hingana Farm</h3>
+    <div class="two-col">
+      <div>
+      <div style="font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#94a3b8;margin:14px 0 4px;">Inflow</div>
+      <table>
+        
+        <tr><td>Own Morning</td><td style="text-align:right;color:#4f46e5;">1439.0 L</td></tr>
+        
+        <tr><td>Own Evening</td><td style="text-align:right;color:#4f46e5;">1429.5 L</td></tr>
+        
+        <tr><td>From Sansthan (Morn)</td><td style="text-align:right;color:#4f46e5;">0.0 L</td></tr>
+        
+        <tr><td>From Sansthan (Eve)</td><td style="text-align:right;color:#4f46e5;">1502.8 L</td></tr>
+        
+        <tr><td>Dhamdha</td><td style="text-align:right;color:#4f46e5;">1150.0 L</td></tr>
+        
+        <tr><td>Sonalika Ji</td><td style="text-align:right;color:#4f46e5;">0.0 L</td></tr>
+        
+        <tr><td>Vikas</td><td style="text-align:right;color:#4f46e5;">0.0 L</td></tr>
+        
+        <tr><td>Any Other</td><td style="text-align:right;color:#4f46e5;">0.0 L</td></tr>
+        
+        
+        <tr class="total-row"><td>Total Inflow</td><td style="text-align:right;color:#047857;">5521.2 L</td></tr>
+        
+      </table>
+    </div>
+      <div>
+      <div style="font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#94a3b8;margin:14px 0 4px;">Outflow</div>
+      <table>
+        
+        <tr><td>To Samriddhi</td><td style="text-align:right;color:#4f46e5;">147.0 L</td></tr>
+        
+        <tr><td>To Utpadan</td><td style="text-align:right;color:#4f46e5;">378.8 L</td></tr>
+        
+        <tr><td>Wastage</td><td style="text-align:right;color:#4f46e5;">0.0 L</td></tr>
+        
+        
+        <tr class="total-row"><td>Total Outflow</td><td style="text-align:right;color:#b91c1c;">525.8 L</td></tr>
+        
+      </table>
+    </div>
+    </div>
+
+    <h3 style="font-size:.95rem;margin:18px 0 0;color:#0f172a;">🏛️ Sansthan</h3>
+    <div>
+      <div style="font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#94a3b8;margin:14px 0 4px;">Outflow</div>
+      <table>
+        
+        <tr><td>To Hingana (Morn)</td><td style="text-align:right;color:#4f46e5;">0.0 L</td></tr>
+        
+        <tr><td>To Hingana (Eve)</td><td style="text-align:right;color:#4f46e5;">1502.8 L</td></tr>
+        
+        <tr><td>To Samriddhi</td><td style="text-align:right;color:#4f46e5;">1459.8 L</td></tr>
+        
+        <tr><td>To Utpadan</td><td style="text-align:right;color:#4f46e5;">0.0 L</td></tr>
+        
+        <tr><td>Internal (Morn)</td><td style="text-align:right;color:#4f46e5;">293.2 L</td></tr>
+        
+        <tr><td>Internal (Eve)</td><td style="text-align:right;color:#4f46e5;">92.8 L</td></tr>
+        
+        <tr><td>Wastage</td><td style="text-align:right;color:#4f46e5;">0.0 L</td></tr>
+        
+        
+        <tr class="total-row"><td>Total Outflow</td><td style="text-align:right;color:#b91c1c;">3348.5 L</td></tr>
+        
+      </table>
+    </div>
+
+    <h3 style="font-size:.95rem;margin:18px 0 0;color:#0f172a;">🧀 Utpadan Room</h3>
+    <div class="two-col">
+      <div>
+      <div style="font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#94a3b8;margin:14px 0 4px;">Inflow</div>
+      <table>
+        
+        <tr><td>From Sansthan</td><td style="text-align:right;color:#4f46e5;">0.0 L</td></tr>
+        
+        <tr><td>From Hingana</td><td style="text-align:right;color:#4f46e5;">378.8 L</td></tr>
+        
+        <tr><td>From Samriddhi</td><td style="text-align:right;color:#4f46e5;">295.8 L</td></tr>
+        
+        <tr><td>Sonalika Ji</td><td style="text-align:right;color:#4f46e5;">176.8 L</td></tr>
+        
+        <tr><td>Vikas</td><td style="text-align:right;color:#4f46e5;">493.2 L</td></tr>
+        
+        <tr><td>Shesh</td><td style="text-align:right;color:#4f46e5;">96.2 L</td></tr>
+        
+        <tr><td>Any Other</td><td style="text-align:right;color:#4f46e5;">0.0 L</td></tr>
+        
+        
+        <tr class="total-row"><td>Total Inflow</td><td style="text-align:right;color:#047857;">1440.8 L</td></tr>
+        
+      </table>
+    </div>
+      <div>
+      <div style="font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#94a3b8;margin:14px 0 4px;">Outflow (used for)</div>
+      <table>
+        
+        <tr><td>Paneer</td><td style="text-align:right;color:#4f46e5;">454.0 L</td></tr>
+        
+        <tr><td>Dahi</td><td style="text-align:right;color:#4f46e5;">67.5 L</td></tr>
+        
+        <tr><td>Ghee</td><td style="text-align:right;color:#4f46e5;">618.0 L</td></tr>
+        
+        <tr><td>Wastage</td><td style="text-align:right;color:#4f46e5;">34.2 L</td></tr>
+        
+        <tr><td>To Sansthan</td><td style="text-align:right;color:#4f46e5;">267.0 L</td></tr>
+        
+        
+        <tr class="total-row"><td>Total Outflow</td><td style="text-align:right;color:#b91c1c;">1440.8 L</td></tr>
+        
+      </table>
+    </div>
+    </div>
+  </div>
+
+  <!-- Receivables & Loans -->
+  <div class="two-col">
+    <div class="section">
+      <h2>Sundry Debtors — Top 10</h2>
+      <table>
+        <tr><th>Party</th><th>Amount</th></tr>
+        
+        <tr><td>BR AGRAWAL</td><td>₹14,670.00</td></tr>
+        
+        <tr><td>NARESH AGRAWAL  011</td><td>₹8,164.00</td></tr>
+        
+        <tr><td>RAMESH MITTAL  178</td><td>₹7,231.00</td></tr>
+        
+        <tr><td>VINOD SADARAM JI 051</td><td>₹5,746.00</td></tr>
+        
+        <tr><td>ANITA DIDI 001</td><td>₹5,370.00</td></tr>
+        
+        <tr><td>SHIFA SAMEER  762</td><td>₹4,160.00</td></tr>
+        
+        <tr><td>GURPEET SINGH  262</td><td>₹4,105.00</td></tr>
+        
+        <tr><td>LUNIYAJI</td><td>₹3,110.00</td></tr>
+        
+        <tr><td>MEERA DIDI  758</td><td>₹3,101.00</td></tr>
+        
+        <tr><td>GOPAL GADODIYA  438</td><td>₹3,000.00</td></tr>
+        
+        <tr class="total-row"><td>Total (49 parties)</td><td>₹96,521.00</td></tr>
+      </table>
+    </div>
+    <div class="section">
+      <h2>Loans & Advances</h2>
+      <p style="font-size:1.4rem;font-weight:700;margin:0 0 4px">₹242,494.81</p>
+      <div style="font-size:.78rem;color:#64748b;margin-bottom:12px">
+        <span style="color:#16a34a;font-weight:600">Dr ₹73,668.82</span> ·
+        <span style="color:#dc2626;font-weight:600">Cr ₹76,504.82</span> ·
+        Net ₹-2,836.00
+      </div>
+      <table>
+        <tr><th>Party</th><th>Opening</th><th>Dr</th><th>Cr</th><th>Closing</th><th>Side</th></tr>
+        
+        <tr>
+          <td>DHANESH BHAI ADV.</td>
+          <td>₹8,640.00</td>
+          <td style="color:#16a34a">₹0.00</td>
+          <td style="color:#dc2626">₹0.00</td>
+          <td>₹8,640.00</td>
+          <td>Dr</td>
+        </tr>
+        
+        <tr>
+          <td>DHARAM BHAI ADV.</td>
+          <td>₹71,907.00</td>
+          <td style="color:#16a34a">₹0.00</td>
+          <td style="color:#dc2626">₹0.00</td>
+          <td>₹71,907.00</td>
+          <td>Dr</td>
+        </tr>
+        
+        <tr>
+          <td>HARSH BHAI</td>
+          <td>₹0.00</td>
+          <td style="color:#16a34a">₹42,564.82</td>
+          <td style="color:#dc2626">₹42,564.82</td>
+          <td>₹0.00</td>
+          <td>Dr</td>
+        </tr>
+        
+        <tr>
+          <td>KISHAN BHAIYA ADV.</td>
+          <td>₹38,662.81</td>
+          <td style="color:#16a34a">₹1,280.00</td>
+          <td style="color:#dc2626">₹0.00</td>
+          <td>₹39,942.81</td>
+          <td>Dr</td>
+        </tr>
+        
+        <tr>
+          <td>MANJIT SINGH SANSTHAN</td>
+          <td>₹85,242.00</td>
+          <td style="color:#16a34a">₹4,720.00</td>
+          <td style="color:#dc2626">₹11,566.00</td>
+          <td>₹78,396.00</td>
+          <td>Dr</td>
+        </tr>
+        
+        <tr>
+          <td>NEHA SAHU ADV..</td>
+          <td>₹8,225.00</td>
+          <td style="color:#16a34a">₹60.00</td>
+          <td style="color:#dc2626">₹6,553.00</td>
+          <td>₹1,732.00</td>
+          <td>Dr</td>
+        </tr>
+        
+        <tr>
+          <td>SANTOSH BHAI ADV.</td>
+          <td>₹15,520.00</td>
+          <td style="color:#16a34a">₹560.00</td>
+          <td style="color:#dc2626">₹2,000.00</td>
+          <td>₹14,080.00</td>
+          <td>Dr</td>
+        </tr>
+        
+        <tr>
+          <td>SATROHAN BHAI ADV.</td>
+          <td>₹9,021.00</td>
+          <td style="color:#16a34a">₹4,500.00</td>
+          <td style="color:#dc2626">₹3,781.00</td>
+          <td>₹9,740.00</td>
+          <td>Dr</td>
+        </tr>
+        
+        <tr>
+          <td>YUGESH NISHAD ADV.</td>
+          <td>₹8,113.00</td>
+          <td style="color:#16a34a">₹19,984.00</td>
+          <td style="color:#dc2626">₹10,040.00</td>
+          <td>₹18,057.00</td>
+          <td>Dr</td>
+        </tr>
+        
+      </table>
+    </div>
+  </div>
+
+  <!-- Coupons -->
+  <div class="section">
+    <h2>Coupons — Top 10 of 119 customers  |  Total ₹571,620.00  |  Avg ₹4,803.53</h2>
+    <table>
+      <tr><th>Customer</th><th>Amount</th></tr>
+      
+      <tr><td>GHANSHYAM AGRAWAL 002</td><td>₹29,925.00</td></tr>
+      
+      <tr><td>SOURYA CONSUMER SERVICE 320</td><td>₹20,475.00</td></tr>
+      
+      <tr><td>VINOD SADARAM JI 051</td><td>₹17,325.00</td></tr>
+      
+      <tr><td>GOPAL AGRWAL  550</td><td>₹15,750.00</td></tr>
+      
+      <tr><td>GURPEET SINGH  262</td><td>₹11,025.00</td></tr>
+      
+      <tr><td>KAILASH AGRAWAL 008</td><td>₹11,025.00</td></tr>
+      
+      <tr><td>LAKHVEENDAR SINGH  414</td><td>₹11,025.00</td></tr>
+      
+      <tr><td>RAJESH JAIN  497</td><td>₹11,025.00</td></tr>
+      
+      <tr><td>GOURI SHANKAR  006</td><td>₹9,450.00</td></tr>
+      
+      <tr><td>NARESH AGRAWAL  011</td><td>₹9,450.00</td></tr>
+      
+    </table>
+  </div>
+
+  <!-- Discrepancies -->
+  <div class="section">
+    <h2>Discrepancies (4)</h2>
+    
+    <table>
+      <tr><th>Code</th><th>Severity</th><th>Message</th></tr>
+      
+      <tr>
+        <td><strong>D1</strong></td>
+        <td><span class="badge badge-critical">Critical</span></td>
+        <td>Sale total mismatch: file=559672.86, computed=559753.14</td>
+      </tr>
+      
+      <tr>
+        <td><strong>D3</strong></td>
+        <td><span class="badge badge-warning">Warning</span></td>
+        <td>Suspense A/c balance is 5480.0 (expected 0)</td>
+      </tr>
+      
+      <tr>
+        <td><strong>D8</strong></td>
+        <td><span class="badge badge-warning">Warning</span></td>
+        <td>Paneer/Dahi GST mismatch: ledger=556.25, 1%-of-gross model=473.32 (gross=47332.24)</td>
+      </tr>
+      
+      <tr>
+        <td><strong>D7</strong></td>
+        <td><span class="badge badge-info">Info</span></td>
+        <td>Expense head auto-bucketed to Other: &#39;NEW ELECTRIC AUTO 8090&#39;</td>
+      </tr>
+      
+    </table>
+    
+  </div>
+
+</div>
+</body>
+</html>

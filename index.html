@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Samriddhi Farm — Monthly Dashboards</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 0; background: #f8fafc; color: #1e293b; }
+    .wrap { max-width: 720px; margin: 0 auto; padding: 32px 20px 48px; }
+    h1 { font-size: 1.5rem; margin: 0 0 4px; }
+    .sub { color: #64748b; margin: 0 0 28px; font-size: 0.95rem; }
+    .months { display: grid; gap: 14px; }
+    a.month {
+      display: flex; align-items: center; justify-content: space-between;
+      background: #fff; border-radius: 10px; box-shadow: 0 1px 4px #0001;
+      padding: 20px 22px; text-decoration: none; color: inherit;
+      border: 1px solid #e2e8f0; transition: box-shadow .15s, transform .15s;
+    }
+    a.month:hover { box-shadow: 0 4px 12px #0002; transform: translateY(-1px); }
+    .month .name { font-size: 1.15rem; font-weight: 600; }
+    .month .code { color: #94a3b8; font-size: 0.85rem; margin-top: 2px; }
+    .month .arrow { color: #1d4ed8; font-size: 1.4rem; }
+    .foot { margin-top: 32px; color: #94a3b8; font-size: 0.8rem; line-height: 1.5; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Samriddhi Farm — Monthly Dashboards</h1>
+    <p class="sub">Choose a month to view its dashboard.</p>
+    <div class="months">
+      <a class="month" href="2026-05/">
+        <div><div class="name">May 2026</div><div class="code">2026-05</div></div>
+        <div class="arrow">&rarr;</div>
+      </a>
+      <a class="month" href="2026-04/">
+        <div><div class="name">April 2026</div><div class="code">2026-04</div></div>
+        <div class="arrow">&rarr;</div>
+      </a>
+    </div>
+    <p class="foot">Private financial dashboards. Not indexed by search engines.</p>
+  </div>
+</body>
+</html>
