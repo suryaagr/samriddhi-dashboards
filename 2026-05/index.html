@@ -27,13 +27,104 @@
   .badge-warning  { background: #fef3c7; color: #92400e; }
   .badge-info     { background: #dbeafe; color: #1e40af; }
   @media (max-width: 640px) { .two-col { grid-template-columns: 1fr; } }
+
+  /* Month navigation bar */
+  .dash-nav { position: sticky; top: 0; z-index: 50; background: #fff; border-bottom: 1px solid #e2e8f0;
+              padding: 8px 16px; display: flex; align-items: center; gap: 8px; }
+  .dash-nav .nav-home { flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center;
+              min-height: 48px; padding: 0 12px; border-radius: 8px; background: #f1f5f9; color: #334155;
+              font-size: .82rem; font-weight: 600; text-decoration: none; white-space: nowrap; }
+  .dash-nav .nav-home:hover { background: #e2e8f0; }
+  .dash-nav .nav-fill { flex: 1 1 auto; display: flex; align-items: center; gap: 8px; min-width: 0; }
+  .dash-nav .nav-arrow { flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center;
+              min-height: 48px; min-width: 48px; padding: 0 12px; border-radius: 8px; background: #f1f5f9;
+              color: #334155; font-size: .9rem; font-weight: 600; text-decoration: none; }
+  .dash-nav .nav-arrow:hover { background: #e2e8f0; }
+  .dash-nav .nav-arrow[aria-disabled="true"] { opacity: .38; pointer-events: none; }
+  .dash-nav .nav-select { flex: 1 1 auto; min-width: 0; min-height: 48px; padding: 0 30px 0 12px;
+              border-radius: 8px; border: 1px solid #e2e8f0; background: #fff; color: #334155;
+              font: inherit; font-size: .84rem; font-weight: 600; cursor: pointer; appearance: none;
+              background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'><path d='M2 4l4 4 4-4' fill='none' stroke='%2364748b' stroke-width='1.8' stroke-linecap='round'/></svg>");
+              background-repeat: no-repeat; background-position: right 10px center; }
 </style>
 </head>
-<body>
+<body data-month="2026-05">
+
+<div class="dash-nav" id="dashNav">
+  <a class="nav-home" href="../">⌂ All months</a>
+  <div class="nav-fill" id="dashNavFill"></div>
+</div>
+<script>
+(function () {
+  var CUR = document.body.getAttribute("data-month");
+  fetch("../months.json").then(function (r) {
+    if (!r.ok) throw new Error("months.json " + r.status);
+    return r.json();
+  }).then(function (data) {
+    var months = (data && data.months) || [];
+    var pages = (data && data.pages) || [];
+    if (!months.length) return;
+
+    var idx = months.indexOf(CUR);
+    var fill = document.getElementById("dashNavFill");
+
+    function monthLabel(m) {
+      var names = { "01":"January","02":"February","03":"March","04":"April","05":"May","06":"June",
+                    "07":"July","08":"August","09":"September","10":"October","11":"November","12":"December" };
+      var p = m.split("-");
+      return names[p[1]] + " " + p[0];
+    }
+
+    var back = document.createElement("a");
+    back.className = "nav-arrow";
+    back.textContent = "←";
+    back.setAttribute("aria-label", "Previous month");
+    if (idx > 0) { back.href = "../" + months[idx - 1] + "/"; }
+    else { back.setAttribute("aria-disabled", "true"); }
+    fill.appendChild(back);
+
+    var sel = document.createElement("select");
+    sel.className = "nav-select";
+    sel.setAttribute("aria-label", "Choose a page");
+    var optgroupMonths = document.createElement("optgroup");
+    optgroupMonths.label = "Months";
+    for (var i = months.length - 1; i >= 0; i--) {
+      var o = document.createElement("option");
+      o.value = months[i] + "/";
+      o.textContent = monthLabel(months[i]);
+      if (months[i] === CUR) o.selected = true;
+      optgroupMonths.appendChild(o);
+    }
+    sel.appendChild(optgroupMonths);
+    if (pages.length) {
+      var optgroupPages = document.createElement("optgroup");
+      optgroupPages.label = "Other pages";
+      pages.forEach(function (pg) {
+        var o = document.createElement("option");
+        o.value = pg.path;
+        o.textContent = pg.label;
+        optgroupPages.appendChild(o);
+      });
+      sel.appendChild(optgroupPages);
+    }
+    sel.addEventListener("change", function () { window.location.href = "../" + sel.value; });
+    fill.appendChild(sel);
+
+    var fwd = document.createElement("a");
+    fwd.className = "nav-arrow";
+    fwd.textContent = "→";
+    fwd.setAttribute("aria-label", "Next month");
+    if (idx > -1 && idx < months.length - 1) { fwd.href = "../" + months[idx + 1] + "/"; }
+    else { fwd.setAttribute("aria-disabled", "true"); }
+    fill.appendChild(fwd);
+  }).catch(function () { /* months.json unavailable — bar stays home-link only */ });
+})();
+</script>
+
 <div class="container">
 
   <h1>Samriddhi — 2026-05 Dashboard</h1>
-  <div class="subtitle">Generated 2026-08-19 06:39 UTC</div>
+  <div class="subtitle">Generated 2026-08-19 13:36 UTC</div>
 
   <!-- Headline KPIs -->
   <div class="section">

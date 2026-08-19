@@ -21,6 +21,12 @@
     .month .name { font-size: 1.15rem; font-weight: 600; }
     .month .code { color: #94a3b8; font-size: 0.85rem; margin-top: 2px; }
     .month .arrow { color: #1d4ed8; font-size: 1.4rem; }
+    .extra-heading { margin: 28px 0 14px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase;
+                     letter-spacing: .05em; color: #94a3b8; }
+    a.month.extra { border-color: #dbeafe; }
+    .month .extra-name { color: #1d4ed8; }
+    .fallback { background: #fff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 20px 22px;
+                color: #475569; font-size: 0.9rem; }
     .foot { margin-top: 32px; color: #94a3b8; font-size: 0.8rem; line-height: 1.5; }
   </style>
 </head>
@@ -28,25 +34,66 @@
   <div class="wrap">
     <h1>Samriddhi Farm — Monthly Dashboards</h1>
     <p class="sub">Choose a month to view its dashboard.</p>
-    <div class="months">
-      <a class="month" href="2026-07/">
-        <div><div class="name">July 2026</div><div class="code">2026-07</div></div>
-        <div class="arrow">&rarr;</div>
-      </a>
-      <a class="month" href="2026-06/">
-        <div><div class="name">June 2026</div><div class="code">2026-06</div></div>
-        <div class="arrow">&rarr;</div>
-      </a>
-      <a class="month" href="2026-05/">
-        <div><div class="name">May 2026</div><div class="code">2026-05</div></div>
-        <div class="arrow">&rarr;</div>
-      </a>
-      <a class="month" href="2026-04/">
-        <div><div class="name">April 2026</div><div class="code">2026-04</div></div>
-        <div class="arrow">&rarr;</div>
-      </a>
-    </div>
+    <div class="months" id="monthsList"></div>
+    <div class="foot" id="pageFoot"></div>
     <p class="foot">Private financial dashboards. Not indexed by search engines.</p>
   </div>
+
+  <script>
+  (function () {
+    var NAMES = { "01":"January","02":"February","03":"March","04":"April","05":"May","06":"June",
+                  "07":"July","08":"August","09":"September","10":"October","11":"November","12":"December" };
+    function monthLabel(m) {
+      var p = m.split("-");
+      return NAMES[p[1]] + " " + p[0];
+    }
+
+    var list = document.getElementById("monthsList");
+
+    function renderFallback() {
+      // Best-effort static list, used only if months.json cannot be read.
+      var FALLBACK_MONTHS = ["2026-07", "2026-06", "2026-05", "2026-04"];
+      var div = document.createElement("div");
+      div.className = "fallback";
+      div.textContent = "Could not load the month list. Known months: " +
+        FALLBACK_MONTHS.map(monthLabel).join(", ") + ".";
+      list.appendChild(div);
+    }
+
+    fetch("months.json").then(function (r) {
+      if (!r.ok) throw new Error("months.json " + r.status);
+      return r.json();
+    }).then(function (data) {
+      var months = (data && data.months) || [];
+      var pages = (data && data.pages) || [];
+      if (!months.length) { renderFallback(); return; }
+
+      months.slice().reverse().forEach(function (m) {
+        var a = document.createElement("a");
+        a.className = "month";
+        a.href = m + "/";
+        a.innerHTML = '<div><div class="name"></div><div class="code"></div></div><div class="arrow">&rarr;</div>';
+        a.querySelector(".name").textContent = monthLabel(m);
+        a.querySelector(".code").textContent = m;
+        list.appendChild(a);
+      });
+
+      if (pages.length) {
+        var heading = document.createElement("div");
+        heading.className = "extra-heading";
+        heading.textContent = "More";
+        list.appendChild(heading);
+        pages.forEach(function (pg) {
+          var a = document.createElement("a");
+          a.className = "month extra";
+          a.href = pg.path;
+          a.innerHTML = '<div><div class="name extra-name"></div></div><div class="arrow">&rarr;</div>';
+          a.querySelector(".name").textContent = pg.label;
+          list.appendChild(a);
+        });
+      }
+    }).catch(renderFallback);
+  })();
+  </script>
 </body>
 </html>
